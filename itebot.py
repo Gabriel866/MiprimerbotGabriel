@@ -1,11 +1,13 @@
 import importlib
 import sqlite3
+from dotenv import load_dotenv
 from telegram import Update, InputFile
 from telegram.ext import Application, MessageHandler, filters, CallbackContext, CommandHandler
 import archivotron
 import os
 
-TOKEN = "7909533678:AAFyw4itwATXI5hEG9WvM8yIf_WuLuu8YvE"
+load_dotenv() 
+token_telgram = os.environ['token']
 
 RUTA_IMAGENES = r"C:\\Users\\garoi\\OneDrive\\Desktop\\SCHOOL\\6to_SEMESTRE\\3.- LENGUAJES Y AUTOMATAS\\imagen"
 
@@ -201,11 +203,13 @@ async def analizar_mensaje(update: Update, context: CallbackContext):
             respuesta += f"\ud83d\udcda Materia: '{palabra}', {materias[palabra]}\n"
     await update.message.reply_text(respuesta if respuesta else "No se encontraron coincidencias.")
 
+
+
 init_db()
 insertar_datos_db()
 insertar_materias()
 
-app = Application.builder().token(TOKEN).build()
+app = Application.builder().token(token_telgram).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(CommandHandler("consultar", consultar))
 app.add_handler(CommandHandler("buscarimagen", buscar_imagen))
