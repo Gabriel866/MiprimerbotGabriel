@@ -1,5 +1,6 @@
 # telegram_bot
-Este bot de Telegram fue desarrollado con el objetivo de facilitar la consulta de materias, menús, ayudas y palabras clave.
+Este bot de Telegram fue pensando proincipalmete para guardar imagenes para consultarlas mas faciles pero se les fueron agregando un las diferencias actividades que se estbieron mirando en clase
+la consulta de materias, menús, ayudas y palabras clave, 
 así como el almacenamiento y búsqueda de imágenes clasificadas por equipos. 
 Utiliza una base de datos SQLite local y permite analizar mensajes de texto con listas personalizadas.
 Donde su funcion principal es la busqueda de imagenes.
