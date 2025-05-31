@@ -5,6 +5,8 @@ from telegram import Update, InputFile
 from telegram.ext import Application, MessageHandler, filters, CallbackContext, CommandHandler
 import archivotron
 import os
+from telegram import ReplyKeyboardMarkup
+
 
 load_dotenv() 
 token_telgram = os.environ['token']
@@ -126,8 +128,21 @@ async def consultar(update: Update, context: CallbackContext):
         respuesta += f"{fila}\n"
     await update.message.reply_text(respuesta)
 
+##async def start(update: Update, context: CallbackContext):
+   ## await update.message.reply_text("\u00a1Hola! Envíame un mensaje y verificaré las palabras.")
+
 async def start(update: Update, context: CallbackContext):
-    await update.message.reply_text("\u00a1Hola! Envíame un mensaje y verificaré las palabras.")
+    keyboard = [
+        ["/consultar materias", "/buscarimagen"],
+       ## ["materias", "calificaciones"],
+      ##  ["ayuda", "menu"]
+    ]
+    reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True)
+    await update.message.reply_text(
+        "¡Hola! Usa los botones o escribe un mensaje, y te ayudaré con base en la base de datos.",
+        reply_markup=reply_markup
+    )
+
 
 async def manejar_imagen(update: Update, context: CallbackContext):
     photo = update.message.photo[-1]
