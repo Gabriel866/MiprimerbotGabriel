@@ -5,6 +5,8 @@ así como el almacenamiento y búsqueda de imágenes clasificadas por equipos.
 Utiliza una base de datos SQLite local y permite analizar mensajes de texto con listas personalizadas.
 Donde su funcion principal es la busqueda de imagenes.
 
+Link de telegram: https://web.telegram.org/a/#7909533678
+
 ## Funcionalidades
 - Búsqueda de imágenes por equipo usando `/buscarimagen <equipo>`.
 - Consulta de materias por texto.
